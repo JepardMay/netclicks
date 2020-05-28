@@ -506,7 +506,7 @@ main {
 .tv-card__vote {
     position: absolute;
     top: 18px;
-    left: 1px;
+    left: 0;
     text-align: center;
     color: #FFFFFF;
     background-color: #FF637D;
