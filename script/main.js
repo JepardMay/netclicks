@@ -89,6 +89,7 @@ const renderCard = response => {
             tvShowsList.append(card);
         });
     } else {
+        console.log(response);
         tvShowsList.textContent = '';
         const noResults = document.createElement('p');
         noResults.textContent = 'По вашему запросу сериалов не найдено :(';
@@ -166,7 +167,7 @@ tvShowsList.addEventListener('click', event => {
                 }
                 
                 modalTitle.textContent = title;
-                genresList.innerHTML = genres.reduce((acc, item) => `${acc}<li>${item.name.charAt(0).toUpperCase() + item.name.slice(1).toLowerCase()}</li>`, '');
+                genresList.innerHTML = genres.reduce((acc, item) => `${acc}<li>${item.name.charAt(0).toUpperCase() + item.name.slice(1)}</li>`, '');
                 rating.textContent = voteNum;
                 description.textContent = overviewText;
                 modalLink.href = homepage;
