@@ -153,11 +153,18 @@ tvShowsList.addEventListener('click', event => {
                     overview, 
                     homepage 
                 }) => {
-                const posterIMG = posterPath ? IMG_URL + posterPath : 'img/no-poster.jpg';
+                const posterIMG = posterPath ? IMG_URL + posterPath : false;
                 const voteNum = voteAverage ? voteAverage : '-';
                 const overviewText = overview ? overview : '-';
-                tvCardImg.src = posterIMG;
-                tvCardImg.alt = title;
+                
+                if (posterIMG) {
+                    tvCardImg.parentElement.removeAttribute('style');
+                    tvCardImg.src = posterIMG;
+                    tvCardImg.alt = title;
+                } else {
+                    tvCardImg.parentElement.style.display = 'none';
+                }
+                
                 modalTitle.textContent = title;
                 genresList.innerHTML = genres.reduce((acc, item) => `${acc}<li>${item.name.charAt(0).toUpperCase() + item.name.slice(1).toLowerCase()}</li>`, '');
                 rating.textContent = voteNum;
