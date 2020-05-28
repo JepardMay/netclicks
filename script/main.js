@@ -91,7 +91,7 @@ const renderCard = response => {
     } else {
         tvShowsList.textContent = '';
         const noResults = document.createElement('p');
-        noResults.textContent = 'По вашему запросу сериалов не найдено';
+        noResults.textContent = 'По вашему запросу сериалов не найдено :(';
         loading.remove();
         tvShowsList.insertAdjacentElement('beforebegin', noResults);
     }

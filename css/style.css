@@ -427,6 +427,7 @@ main {
 }
 
 .search__form {
+    position: relative;
     padding-top: 15px;
 }
 
@@ -452,6 +453,18 @@ main {
 
 .search__form-input:focus {
     border-top: 2px solid #ccc;
+}
+
+.search__btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 31px;
+    height: 31px;
+    padding: 7px 0;
+    background: none;
+    border: none;
+    color: #000;
 }
 
 .tv-shows__head {
